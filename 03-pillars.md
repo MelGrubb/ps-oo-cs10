@@ -9,22 +9,26 @@ classDiagram
 	class Car {
 		+BrakePedal : BrakePedal
 		+EngineControlModule : EngineControlModule
+		+IsRunning : bool
 		+Make : string
 		+Model : string
 		+SteeringWheel : SteeringWheel
 		+Throttle : Throttle
-		+Start() bool
-		+Stop() bool
+		+Start()
+		+Stop()
 	}
 	Car --> BrakePedal
 	Car --> EngineControlModule
 	Car --> SteeringWheel
 	Car --> Throttle
 	class EngineControlModule {
-		-_crankPositionSensor : CrankPositionSensor:
+		-_airTemperatureSensor : AirTemperatureSensor
+		-_crankPositionSensor : CrankPositionSensor
 		-_throttlePositionSensor : ThrottlePositionSensor
-		+Start() bool
-		+Stop() bool
+		-_status : int
+		IsRunning : bool
+		+Start()
+		+Stop()
 	}
 	EngineControlModule --> CrankPositionSensor
 	EngineControlModule --> ThrottlePositionSensor
