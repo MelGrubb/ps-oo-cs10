@@ -6,6 +6,7 @@
         {
             Make = "Globomantics";
             Model = "S1";
+            EngineControlModule = new IceControlModule();
         }
     }
 }
