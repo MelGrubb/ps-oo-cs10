@@ -48,7 +48,7 @@ classDiagram
 		#AirTemperatureSensor : AirTemperatureSensor
 		#ThrottlePositionSensor : ThrottlePositionSensor
 		#Status : int
-		IsRunning : bool
+		+IsRunning : bool
 		+Start()
 		+Stop()
 	}
