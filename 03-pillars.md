@@ -6,7 +6,16 @@ Example diagrams for module 3 - The Four Pillars
 
 ```mermaid
 classDiagram
+	class EC1 {
+	}
+	EC1 --|> Car : inherits
+
+	class S1 {
+	}
+	S1 --|> Car : inherits
+
 	class Car {
+		<<abstract>>
 		+BrakePedal : BrakePedal
 		+EngineControlModule : EngineControlModule
 		+IsRunning : bool
@@ -21,15 +30,27 @@ classDiagram
 	Car --> EngineControlModule
 	Car --> SteeringWheel
 	Car --> Throttle
-	class EngineControlModule {
-		-_airTemperatureSensor : AirTemperatureSensor
+
+	class ElectricControlModule {
+	}
+	ElectricControlModule --|> EngineControlModule : inherits
+
+	class IceControlModule {
 		-_crankPositionSensor : CrankPositionSensor
-		-_throttlePositionSensor : ThrottlePositionSensor
-		-_status : int
+		-_exhaustOxygenSensor : ExhaustOxygenSensor
+	}
+	IceControlModule --|> EngineControlModule : inherits
+	IceControlModule --> CrankPositionSensor
+	IceControlModule --> ExhaustOxygenSensor
+
+	class EngineControlModule {
+		<<abstract>>
+		#AirTemperatureSensor : AirTemperatureSensor
+		#ThrottlePositionSensor : ThrottlePositionSensor
+		#Status : int
 		IsRunning : bool
 		+Start()
 		+Stop()
 	}
-	EngineControlModule --> CrankPositionSensor
 	EngineControlModule --> ThrottlePositionSensor
 ```

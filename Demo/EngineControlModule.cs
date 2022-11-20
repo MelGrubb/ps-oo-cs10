@@ -1,20 +1,15 @@
 ﻿namespace Demo
 {
-    internal class EngineControlModule
+    public abstract class EngineControlModule
     {
-        private ThrottlePositionSensor _throttlePositionSensor = new ThrottlePositionSensor();
-        private int _status;
+        protected AirTemperatureSensor AirTemperatureSensor = new AirTemperatureSensor();
+        protected ThrottlePositionSensor ThrottlePositionSensor = new ThrottlePositionSensor();
+        protected int Status;
 
-        public bool IsRunning => _status == 1;
+        public bool IsRunning => Status == 1;
 
-        internal void Start()
-        {
-            _status = 1;
-        }
+        internal abstract void Start();
 
-        internal void Stop()
-        {
-            _status = 0;
-        }
+        internal abstract void Stop();
     }
 }

@@ -1,11 +1,11 @@
 ﻿namespace Demo
 {
-    public class Car
+    public abstract class Car
     {
-        private EngineControlModule _engineControlModule = new EngineControlModule();
+        protected EngineControlModule EngineControlModule = new IceControlModule();
 
         public BrakePedal BrakePedal { get; set; } = new BrakePedal();
-        public bool IsRunning => _engineControlModule.IsRunning;
+        public bool IsRunning => EngineControlModule.IsRunning;
         public string Make { get; set; } = "";
         public string Model { get; set; } = "";
         public SteeringWheel SteeringWheel { get; set; } = new SteeringWheel();
@@ -13,12 +13,12 @@
 
         public void Start()
         {
-            _engineControlModule.Start();
+            EngineControlModule.Start();
         }
 
         public void Stop()
         {
-            _engineControlModule.Stop();
+            EngineControlModule.Stop();
         }
     }
 }

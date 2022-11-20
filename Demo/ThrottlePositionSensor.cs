@@ -1,6 +1,6 @@
 ﻿namespace Demo
 {
-    internal class ThrottlePositionSensor
+    public class ThrottlePositionSensor
     {
         public ThrottlePositionSensor()
         {
