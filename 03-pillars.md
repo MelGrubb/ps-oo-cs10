@@ -6,6 +6,14 @@ Example diagrams for module 3 - The Four Pillars
 
 ```mermaid
 classDiagram
+	class Shelter {
+		<<interface>>
+	}
+
+	class Tent {
+	}
+	Tent --|> Shelter : implements
+
 	class EC1 {
 	}
 	EC1 --|> Car : inherits
@@ -26,6 +34,7 @@ classDiagram
 		+Start()
 		+Stop()
 	}
+	Car --|> Shelter : implements
 	Car --> BrakePedal
 	Car --> EngineControlModule
 	Car --> SteeringWheel
