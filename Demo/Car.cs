@@ -2,23 +2,25 @@
 {
     public abstract class Car
     {
-        protected EngineControlModule EngineControlModule = new IceControlModule();
-
-        public BrakePedal BrakePedal { get; set; } = new BrakePedal();
-        public bool IsRunning => EngineControlModule.IsRunning;
         public string Make { get; set; } = "";
         public string Model { get; set; } = "";
-        public SteeringWheel SteeringWheel { get; set; } = new SteeringWheel();
-        public Throttle Throttle { get; set; } = new Throttle();
+        public EngineType EngineType { get; set; }
+        public bool IsRunning { get; set; }
+        public float AirTemperature { get; set; }
+        public float BrakePosition { get; set; }
+        public float CrankPosition { get; set; }
+        public float ExhaustOxygen { get; set; }
+        public float SteeringWheelPosition { get; set; }
+        public float ThrottlePosition { get; set; }
 
         public void Start()
         {
-            EngineControlModule.Start();
+            IsRunning = true;
         }
 
         public void Stop()
         {
-            EngineControlModule.Stop();
+            IsRunning = false;
         }
     }
 }
