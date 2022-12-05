@@ -1,4 +1,4 @@
-# 03 - The SOLID Principles
+# 04 - The SOLID Principles
 
 Example diagrams for module 4 - The SOLID Principles
 
@@ -24,7 +24,7 @@ classDiagram
 
 	class EngineType {
 		<<enumeration>>
-		Electric
-		Gas
+		Gasoline = 1
+		Electric = 2
 	}
 ```

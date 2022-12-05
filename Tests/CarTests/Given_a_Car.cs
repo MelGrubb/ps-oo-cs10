@@ -1,17 +1,17 @@
 ﻿using Demo;
 using NUnit.Framework;
 
-namespace Tests.CarTests.S1Tests
+namespace Tests.CarTests
 {
     [TestFixture]
-    public abstract class Given_an_S1
+    public abstract class Given_a_Car
     {
         protected Car SUT { get; set; }
 
         [SetUp]
         public virtual void SetUp()
         {
-            SUT = new S1();
+            SUT = new Car { EngineType = EngineType.Electric };
         }
     }
 }

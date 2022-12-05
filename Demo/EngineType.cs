@@ -4,6 +4,6 @@
     {
         Unknown = 0,
         Electric = 1,
-        Gas = 2,
+        Gasoline = 2,
     }
 }
