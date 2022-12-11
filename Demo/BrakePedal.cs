@@ -2,5 +2,8 @@
 {
     public class BrakePedal
     {
+        public BrakePedal() 
+        { 
+        }
     }
 }

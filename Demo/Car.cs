@@ -11,9 +11,9 @@
         public SteeringWheel SteeringWheel { get; set; } = new SteeringWheel();
         public Throttle Throttle { get; set; } = new Throttle();
 
-        public Car(EngineControlModule engineControolModule)
+        public Car(EngineControlModule engineControlModule)
         {
-            EngineControlModule = engineControolModule;
+            EngineControlModule = engineControlModule;
         }
 
         public void Start() => EngineControlModule.Start();

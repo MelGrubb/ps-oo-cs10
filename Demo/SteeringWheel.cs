@@ -2,5 +2,8 @@
 {
     public class SteeringWheel
     {
+        public SteeringWheel() 
+        {
+        }
     }
 }

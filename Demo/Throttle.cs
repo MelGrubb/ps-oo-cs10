@@ -2,5 +2,8 @@
 {
     public class Throttle
     {
+        public Throttle()
+        {
+        }
     }
 }
