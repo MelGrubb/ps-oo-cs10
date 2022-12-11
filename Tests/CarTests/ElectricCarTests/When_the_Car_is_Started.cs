@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 
-namespace Tests.CarTests
+namespace Tests.CarTests.ElectricCarTests
 {
     [TestFixture]
-    public class When_the_Car_is_Started : Given_a_Car
+    public class When_the_Car_is_Started : Given_an_electric_Car
     {
         [SetUp]
         public override void SetUp()

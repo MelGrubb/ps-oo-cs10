@@ -9,22 +9,52 @@ classDiagram
 	class Car {
 		+Make : string
 		+Model : string
-		+EngineType : EngineType
+		+EngineControlModule : EngineControlModule
 		+IsRunning : bool
-		+AirTemperature : float
-		+BrakePosition : float
-		+CrankPosition : float
-		+ExhaustOxygen : float
-		+SteeringWheelPosition : float
-		+ThrottlePosition : float
+		+BrakePedal : BrakePedal
+		+SteeringWheel : SteeringWheel
+		+Throttle : Throttle
 		+Start() void
 		+Stop() void
 	}
-	Car --> EngineType
+	Car --> EngineControlModule
+
+	class EngineControlModule {
+		<<abstract>>
+		+EngineType : EngineType
+		+AirTemperatureSensor : AirTemperatureSensor
+		+CrankPositionSensor : CrankPositionSensor
+		+ExhaustOxygenSensor : ExhaustOxygenSensor
+		+ThrottlePositionSensor : ThrottlePositionSensor
+		+IsRunning : bool
+		+Start() void
+		+Stop() void
+	}
+	EngineControlModule --> EngineType
+
+	class ElectricControlModule {
+		<<sealed>>
+		-_relayStatus : int
+	}
+	ElectricControlModule --|> EngineControlModule
+
+	class HybridControlModule {
+		<<sealed>>
+		-_engineStatus : int
+		-_relayStatus : int
+	}
+	HybridControlModule --|> EngineControlModule
+
+	class IceControlModule {
+		<<sealed>>
+		-_engineStatus : int
+	}
+	IceControlModule --|> EngineControlModule
 
 	class EngineType {
 		<<enumeration>>
 		Gasoline = 1
 		Electric = 2
+		Hybrid = 3
 	}
 ```
