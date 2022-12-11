@@ -1,17 +1,17 @@
 ﻿using Demo;
 using NUnit.Framework;
 
-namespace Tests.CarTests.EC1Tests
+namespace Tests.CarTests.GasolineCarTests
 {
     [TestFixture]
-    public abstract class Given_an_EC1
+    public abstract class Given_a_gasoline_Car
     {
         protected Car SUT { get; set; }
 
         [SetUp]
         public virtual void SetUp()
         {
-            SUT = new EC1();
+            SUT = new Car(new IceControlModule());
         }
     }
 }
