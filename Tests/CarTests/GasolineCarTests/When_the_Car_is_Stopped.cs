@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Demo;
+using NUnit.Framework;
 
 namespace Tests.CarTests.GasolineCarTests
 {
@@ -9,7 +10,8 @@ namespace Tests.CarTests.GasolineCarTests
         override public void SetUp()
         {
             base.SetUp();
-            SUT.Stop();
+            var startable = (IStartable)SUT;
+            startable.Stop();
         }
 
         [Test]

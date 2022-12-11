@@ -1,6 +1,6 @@
 ﻿namespace Demo
 {
-    public class Car
+    public class Car : IStartable
     {
         public string Make { get; set; } = "";
         public string Model { get; set; } = "";

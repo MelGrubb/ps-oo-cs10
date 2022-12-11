@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Demo;
+using NUnit.Framework;
 
 namespace Tests.CarTests.ElectricCarTests
 {
@@ -9,7 +10,8 @@ namespace Tests.CarTests.ElectricCarTests
         public override void SetUp()
         {
             base.SetUp();
-            SUT.Start();
+            var startable = (IStartable)SUT;
+            startable.Start();
         }
 
         [Test]
