@@ -1,4 +1,7 @@
-﻿namespace Demo
+﻿using Demo.CarWorld.Enumerations;
+using Demo.CarWorld.Sensors;
+
+namespace Demo.CarWorld.Electronics
 {
     public abstract class EngineControlModule
     {

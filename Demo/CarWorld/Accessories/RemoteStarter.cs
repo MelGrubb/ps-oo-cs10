@@ -1,4 +1,4 @@
-﻿namespace Demo
+﻿namespace Demo.CarWorld.Accessories
 {
     public class RemoteStarter
     {

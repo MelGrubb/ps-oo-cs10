@@ -1,4 +1,7 @@
-﻿namespace Demo
+﻿using Demo.CarWorld.Controls;
+using Demo.CarWorld.Electronics;
+
+namespace Demo.CarWorld
 {
     public class Car : IStartable
     {

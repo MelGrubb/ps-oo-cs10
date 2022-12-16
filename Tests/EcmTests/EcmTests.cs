@@ -1,4 +1,6 @@
 ﻿using Demo;
+using Demo.CarWorld;
+using Demo.CarWorld.Electronics;
 using NUnit.Framework;
 
 namespace Tests.EcmTests
