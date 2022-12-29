@@ -33,3 +33,29 @@ classDiagram
 	}
 	ConcreteBuilder --|> Builder : inherits
 ```
+
+## Strategy
+
+```mermaid
+classDiagram
+	class Strategy {
+		<<interface>>
+		Algorithm()
+	}
+
+	class Context {
+		+Strategies : List~Strategy~
+		+DoSomething()
+	}
+	Context --> Strategy : uses
+
+	class Strategy1 {
+		+Algorithm()
+	}
+	Strategy1 --|> Strategy : implements
+
+	class Strategy2 {
+		+Algorithm()
+	}
+	Strategy2 --|> Strategy : implements
+```
