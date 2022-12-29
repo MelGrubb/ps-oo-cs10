@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Demo\Demo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Strategy\" />
-  </ItemGroup>
-
 </Project>

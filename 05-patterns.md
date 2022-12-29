@@ -40,7 +40,7 @@ classDiagram
 classDiagram
 	class Strategy {
 		<<interface>>
-		Algorithm()
+		+Algorithm()
 	}
 
 	class Context {
@@ -58,4 +58,5 @@ classDiagram
 		+Algorithm()
 	}
 	Strategy2 --|> Strategy : implements
+
 ```
