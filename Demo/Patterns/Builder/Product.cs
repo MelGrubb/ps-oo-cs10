@@ -3,8 +3,8 @@
     public class Product
     {
         public string Name { get; set; }
-        public Component LeftComponent { get; set; }
-        public Component RightComponent { get; set; }
+        public Component? LeftComponent { get; set; } = null;
+        public Component? RightComponent { get; set; } = null;
 
         public Product(string name)
         {
