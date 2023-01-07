@@ -8,8 +8,8 @@ namespace Demo.Nullability
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public float Height { get; set; }
-        public CreditCard CreditCard { get; set; }
+        public float Height { get; set; } = null;
+        public CreditCard CreditCard { get; set; } = null;
     }
 
     public class CreditCard
