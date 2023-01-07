@@ -10,13 +10,6 @@ namespace Demo.Nullability
         public string LastName { get; set; }
         public float Height { get; set; }
         public CreditCard CreditCard { get; set; }
-
-        public Person(string emailAddress, string firstName, string lastName)
-        {
-            EmailAddress = emailAddress;
-            FirstName = firstName;
-            LastName = lastName;
-        }
     }
 
     public class CreditCard
