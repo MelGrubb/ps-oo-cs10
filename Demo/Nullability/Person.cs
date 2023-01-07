@@ -1,6 +1,6 @@
-﻿#nullable enable
+﻿using System;
 
-using System;
+#nullable enable
 
 namespace Demo.Nullability
 {
