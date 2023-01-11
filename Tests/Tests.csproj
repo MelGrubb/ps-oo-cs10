@@ -28,4 +28,8 @@
     <ProjectReference Include="..\Demo\Demo.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Nullability\" />
+  </ItemGroup>
+
 </Project>
