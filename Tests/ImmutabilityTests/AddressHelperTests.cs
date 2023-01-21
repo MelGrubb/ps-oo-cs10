@@ -15,8 +15,8 @@ namespace Tests.ImmutabilityTests
 123 ANY ST.
 ANYTOWN, OH 43210
 USA";
-
-            Assert.AreEqual(expected, AddressHelper.FormatAddress(person));
+            var mailingInfo = new MailingInfo($"{person.FirstName} {person.LastName}", person.Address.Address1, person.Address.Address2, person.Address.City, person.Address.Region, person.Address.PostalCode, person.Address.Country);
+            Assert.AreEqual(expected, AddressHelper.FormatAddress(mailingInfo));
         }
     }
 }
