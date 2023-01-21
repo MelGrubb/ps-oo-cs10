@@ -24,7 +24,7 @@ namespace Demo.Nullability
 
         public string? MiddleName { get; set; } = null;
         public float? Height { get; set; } = null;
-        public CreditCard CreditCard { get; set; } = new CreditCard(null);
+        public CreditCard CreditCard { get; set; } = new CreditCard(null!);
 
         public Person(string emailAddress, string firstName, string lastName)
         {
