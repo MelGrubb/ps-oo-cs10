@@ -2,7 +2,7 @@
 
 namespace Demo.Immutability
 {
-    public record MailingInfo
+    public sealed record MailingInfo
     {
         public string FullName { get; init; }
         public string Address1 { get; init; }
@@ -22,7 +22,7 @@ namespace Demo.Immutability
             this.Country = Country ?? throw new ArgumentNullException(nameof(Country));
         }
 
-        public virtual bool Equals(MailingInfo? other)
+        public bool Equals(MailingInfo? other)
         {
             if (other == null) return false;
             if (ReferenceEquals(this, other)) return true;
