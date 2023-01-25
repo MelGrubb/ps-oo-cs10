@@ -2,11 +2,11 @@
 
 namespace Demo.Immutability
 {
-    public record MailingInfo : IEquatable<MailingInfo>
+    public record struct MailingInfo : IEquatable<MailingInfo>
     {
         public string FullName { get; init; }
         public string Address1 { get; init; }
-        public string? Address2 { get; init; }
+        public string? Address2 { get; init; } = null;
         public string City { get; init; }
         public string Region { get; init; }
         public string PostalCode { get; init; }
@@ -22,12 +22,8 @@ namespace Demo.Immutability
             this.Country = Country ?? throw new ArgumentNullException(nameof(Country));
         }
 
-        public virtual bool Equals(MailingInfo? other)
+        public bool Equals(MailingInfo other)
         { 
-            if (other == null) return false; 
-            if (ReferenceEquals(this, other)) return true; 
-            if (other.GetType() != typeof(MailingInfo)) return false; 
-            
             var result = FullName == other.FullName 
                 && Address1 == other.Address1 
                 && City == other.City 
