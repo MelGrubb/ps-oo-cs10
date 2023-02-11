@@ -11,9 +11,9 @@ internal class SettingsLogger : ISettingsLogger
 {
     private readonly SampleSettings _sampleSettings;
 
-    public SettingsLogger(IOptions<SampleSettings> sampleSettings)
+    public SettingsLogger(SampleSettings sampleSettings)
     {
-        _sampleSettings = sampleSettings.Value;
+        _sampleSettings = sampleSettings;
     }
 
     public void LogSettings()
