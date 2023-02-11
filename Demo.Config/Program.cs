@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System.Security.Authentication.ExtendedProtection;
 
 namespace Demo.Config;
 
@@ -10,10 +12,15 @@ internal sealed class Program
             .AddJsonFile("appsettings.json", false, true)
             .Build();
 
-        Console.WriteLine($"StringSetting = '{configuration.GetValue<string>("SampleSettings:StringSetting")}'");
-        Console.WriteLine($"IntSetting = {configuration.GetValue<int>("SampleSettings:IntSetting")}");
-        Console.WriteLine($"BoolSetting = {configuration.GetValue<bool>("SampleSettings:BoolSetting")}");
-        Console.WriteLine($"DateSetting = {configuration.GetValue<DateTime>("SampleSettings:DateSetting")}");
+        var serviceCollection = new ServiceCollection()
+            .AddTransient<ISettingsLogger, SettingsLogger>();
+        serviceCollection.AddOptions<SampleSettings>()
+            .Bind(configuration.GetSection(SampleSettings.SectionName))
+            .ValidateDataAnnotations();
+        var services = serviceCollection.BuildServiceProvider();
+
+        services.GetRequiredService<ISettingsLogger>().LogSettings();
+
         Console.WriteLine("Press any key to exit.");
         Console.ReadKey();
     }
