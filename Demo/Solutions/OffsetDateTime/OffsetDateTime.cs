@@ -2,7 +2,7 @@
 
 namespace Demo.Solutions.OffsetDateTime;
 
-public struct OffsetDateTime : IEquatable<OffsetDateTime>, IComparable
+public struct OffsetDateTime : IEquatable<OffsetDateTime>, IComparable<OffsetDateTime>, IComparable
 {
     public DateTime Value { get; init; }
     public TimeSpan Offset { get; init; }
