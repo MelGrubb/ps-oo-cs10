@@ -5,7 +5,7 @@ namespace RepairShop.Domain.Model.Entities
     public class Part
     {
         public int Id { get; set; }
-        public Repair Repair { get; set; } = null!;
+        public ICollection<Repair> Repairs { get; set; } = new HashSet<Repair>();
 
         [MaxLength(50)]
         public string Name { get; set; } = string.Empty;
