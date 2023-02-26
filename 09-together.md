@@ -68,4 +68,23 @@ classDiagram
 	class WarrantyService {
 	}
 	WarrantyService --|> IWarrantyService : implements
+
+	class Warranty {
+		<<abstract>>
+		Duration
+		Odometer
+		IsCovered(Repair)
+	}
+
+	class BumperToBumperWarranty {
+	}
+	BumperToBumperWarranty --|> Warranty : inherits
+
+	class PowertrainWarranty {
+	}
+	PowertrainWarranty --|> Warranty : inherits
+
+	class EmissionsWarranty {
+	}
+	EmissionsWarranty --|> Warranty : inherits
 ```
