@@ -37,10 +37,10 @@ namespace RepairShop.Tests
         public void Then_ToString_returns_the_finished_Quote()
         {
             var expected = $@"Repair Quote #{Quote!.Id}, Valid through {Quote.ExpiryDate:D}
-Prepared for John Doe's 0  .
+Prepared for John Doe's 2010 Ford Focus.
 ---
 Parts: 78.98
-Labor: 50.0
+Labor: 50.00
 ---
 Total: 128.98";
             var actual = Quote!.ToString();

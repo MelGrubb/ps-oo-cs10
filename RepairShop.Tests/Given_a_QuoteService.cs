@@ -11,6 +11,7 @@ namespace RepairShop.Tests
         protected RepairShopContext Context { get; set; } = null!;
         protected IQuoteService SUT { get; set; }
         protected RepairOrder RepairOrder { get; set; }
+        protected WarrantyService WarrantyService { get; set; }
 
         [SetUp]
         public virtual void SetUp()
@@ -19,9 +20,15 @@ namespace RepairShop.Tests
             Context.Database.EnsureDeleted();
             Context.Database.EnsureCreated();
 
-            var oilChange = Context.Repairs
-                .Include(x => x.Parts)
-                .Single(x => x.Code == "OC001");
+            WarrantyService = new WarrantyService
+            {
+                Warranties =
+                {
+                    new BumperToBumperWarranty(),
+                    new PowertrainWarranty(),
+                    new EmissionsWarranty()
+                }
+            };
 
             RepairOrder = new RepairOrder
             {
@@ -33,14 +40,18 @@ namespace RepairShop.Tests
                         LastName = "Doe",
                         PhoneNumber = "987654321"
                     },
-                },                
+                    Year = 2010,
+                    Make = "Ford",
+                    Model = "Focus",
+                    Odometer = 50000
+                },   
                 Repairs = { Context.Repairs.Include(x => x.Parts).Single(x => x.Code == "OC001") }
             };
 
             Context.RepairOrders.Add(RepairOrder);
             Context.SaveChanges();
 
-            SUT = new QuoteService(Context, 100);
+            SUT = new QuoteService(Context, 100, WarrantyService);
         }
     }
 }

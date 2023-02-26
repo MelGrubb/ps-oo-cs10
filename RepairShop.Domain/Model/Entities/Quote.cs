@@ -16,8 +16,8 @@
             return $@"Repair Quote #{Id}, Valid through {ExpiryDate:D}
 Prepared for {customer.FirstName} {customer.LastName}'s {vehicle.Year} {vehicle.Make} {vehicle.Model}.
 ---
-Parts: {PartTotal}
-Labor: {LaborTotal}
+Parts: {PartTotal:F}
+Labor: {LaborTotal:F}
 ---
 Total: {PartTotal + LaborTotal:F}";
         }
