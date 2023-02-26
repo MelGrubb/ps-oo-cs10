@@ -13,6 +13,6 @@ namespace RepairShop.Domain.Model.Entities
         [MaxLength(10)]
         public string StockNumber { get; set; } = string.Empty;
 
-        public float Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

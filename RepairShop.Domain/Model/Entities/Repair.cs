@@ -16,6 +16,6 @@ namespace RepairShop.Domain.Model.Entities
         public string Name { get; set; } = string.Empty;
 
         public ICollection<Part> Parts { get; set; } = new HashSet<Part>();
-        public float Labor { get; set; }
+        public decimal Labor { get; set; }
     }
 }
