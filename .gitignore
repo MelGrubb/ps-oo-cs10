@@ -348,3 +348,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/RepairShop.Domain/RepairShop.sqlite-wal
+/RepairShop.Domain/RepairShop.sqlite-shm
+/RepairShop.Domain/RepairShop.sqlite
