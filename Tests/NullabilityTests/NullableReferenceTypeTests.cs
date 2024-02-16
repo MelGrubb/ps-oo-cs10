@@ -14,7 +14,7 @@ namespace Tests.Nullability
         [Test]
         public void Setting_EmailAddress_to_null()
         {
-            var person = new Person(null, "John", "Doe");
+            var person = new Person(null!, "John", "Doe");
             Assert.IsNull(person.EmailAddress);
         }
     }
