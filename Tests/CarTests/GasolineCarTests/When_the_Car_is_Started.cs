@@ -1,10 +1,10 @@
 ﻿using Demo;
 using NUnit.Framework;
 
-namespace Tests.CarTests.HybridCarTests
+namespace Tests.CarTests.GasolineCarTests
 {
     [TestFixture]
-    public class When_the_Car_is_Started : Given_a_hybrid_Car
+    public class When_the_Car_is_Started : Given_a_gasoline_Car
     {
         [SetUp]
         public override void SetUp()

@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 
-namespace Tests.CarTests.EC1Tests
+namespace Tests.CarTests.GeneratorTests
 {
     [TestFixture]
-    public class When_the_Car_is_Started : Given_an_EC1
+    public class When_the_Generator_is_Started : Given_a_Generator
     {
         [SetUp]
         public override void SetUp()

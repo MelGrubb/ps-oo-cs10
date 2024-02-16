@@ -6,6 +6,12 @@ Example diagrams for module 4 - The SOLID Principles
 
 ```mermaid
 classDiagram
+	class IStartable {
+		<<interface>>
+		+Start() void
+		+Stop() void
+	}
+
 	class Car {
 		+Make : string
 		+Model : string
@@ -17,6 +23,7 @@ classDiagram
 		+Start() void
 		+Stop() void
 	}
+	Car --|> IStartable : implements
 	Car --> EngineControlModule
 
 	class EngineControlModule {

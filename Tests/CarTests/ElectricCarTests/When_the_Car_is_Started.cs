@@ -1,15 +1,17 @@
-﻿using NUnit.Framework;
+﻿using Demo;
+using NUnit.Framework;
 
-namespace Tests.CarTests.S1Tests
+namespace Tests.CarTests.ElectricCarTests
 {
     [TestFixture]
-    public class When_the_Car_is_Started : Given_an_S1
+    public class When_the_Car_is_Started : Given_an_electric_Car
     {
         [SetUp]
         public override void SetUp()
         {
             base.SetUp();
-            SUT.Start();
+            var startable = (IStartable)SUT;
+            startable.Start();
         }
 
         [Test]

@@ -1,17 +1,15 @@
-﻿using Demo;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace Tests.CarTests.HybridCarTests
+namespace Tests.CarTests.GeneratorTests
 {
     [TestFixture]
-    public class When_the_Car_is_Stopped : Given_a_hybrid_Car
+    public class When_the_Generator_is_Stopped : Given_a_Generator
     {
         [SetUp]
         override public void SetUp()
         {
             base.SetUp();
-            var startable = (IStartable)SUT;
-            startable.Stop();
+            SUT.Stop();
         }
 
         [Test]
