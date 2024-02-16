@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		03-pillars.md = 03-pillars.md
 		04-solid.md = 04-solid.md
 		05-patterns.md = 05-patterns.md
-		09-together.md = 09-together.md
 		README.md = README.md
 	EndProjectSection
 EndProject
