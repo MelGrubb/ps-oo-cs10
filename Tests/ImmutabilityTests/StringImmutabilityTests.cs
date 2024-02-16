@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 
+#pragma warning disable NUnit2015
+
 namespace Tests.ImmutabilityTests
 {
     [TestFixture]
@@ -12,8 +14,8 @@ namespace Tests.ImmutabilityTests
             var string2 = string1;
 
             Assert.AreEqual(string1, string2);
-            Assert.AreSame(string1, string2); 
-            
+            Assert.AreSame(string1, string2);
+
             string1 = string1 + " World";
 
             Assert.AreNotEqual(string1, string2); 
